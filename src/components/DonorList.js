@@ -9,16 +9,16 @@ function DonorList() {
     const [showForm, setShowForm] = useState(false);
     const [editingDonor, setEditingDonor] = useState(null);
     const [formData, setFormData] = useState({
-        name: '',
-        bloodGroup: '',
-        email: '',
-        phone: '',
-        address: '',
-        city: '',
-        state: '',
-        age: '',
-        available: true,
-        lastDonationDate: ''
+        Name: '',
+        BloodGroup: '',
+        Email: '',
+        Phone: '',
+        Address: '',
+        City: '',
+        State: '',
+        Age: '',
+        Available: true,
+        LastDonationDate: ''
     });
 
     useEffect(() => {
