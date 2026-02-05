@@ -91,7 +91,7 @@ h1 {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #ff9f5a, #ff6b9d);
 }
-}
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;

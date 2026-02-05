@@ -292,10 +292,6 @@ body {
 .stat-label {
   color: rgba(255, 255, 255, 0.8);
   font-size: 1.1rem;
-} {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
 }
 
 .card {
