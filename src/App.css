@@ -160,24 +160,24 @@ body {
 }
 
 .btn-secondary {
-  background: linear-gradient(135deg, #87ceeb, #4a90e2);
+  background: linear-gradient(135deg, #1e40af, #1e3a8a);
   color: white;
 }
 
 .btn-secondary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(135, 206, 235, 0.5);
+  box-shadow: 0 10px 30px rgba(30, 64, 175, 0.5);
 }
 
 .btn-emergency {
-  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  background: linear-gradient(135deg, #991b1b, #7f1d1d);
   color: white;
   animation: pulse-glow 2s infinite;
 }
 
 .btn-emergency:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.7);
+  box-shadow: 0 10px 30px rgba(153, 27, 27, 0.7);
 }
 
 @keyframes slideDown {
