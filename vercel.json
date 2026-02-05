@@ -3,5 +3,11 @@
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "nodeVersion": "18.x",
-  "framework": "vite"
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/:path((?!.*\\.).*)",
+      "destination": "/index.html"
+    }
+  ]
 }
