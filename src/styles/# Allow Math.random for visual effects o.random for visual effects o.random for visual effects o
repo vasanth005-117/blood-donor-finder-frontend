@@ -1,0 +1,3 @@
+# Allow Math.random for visual effects only (non-critical randomness)
+sonar.issue.ignore.multicriteria.e1.ruleKey=javascript:S2245
+sonar.issue.ignore.multicriteria.e1.resourceKey=src/components/Background3D.jsx

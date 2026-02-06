@@ -12,16 +12,16 @@ const Background3D = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    // Create particles
+    // Create particles - NOSONAR: Math.random used for visual effects only, not security-critical
     const particles = [];
     for (let i = 0; i < 50; i++) {
       particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 3 + 1,
-        speedX: (Math.random() - 0.5) * 0.5,
-        speedY: (Math.random() - 0.5) * 0.5,
-        opacity: Math.random() * 0.5 + 0.3,
+        x: Math.random() * canvas.width, // NOSONAR
+        y: Math.random() * canvas.height, // NOSONAR
+        size: Math.random() * 3 + 1, // NOSONAR
+        speedX: (Math.random() - 0.5) * 0.5, // NOSONAR
+        speedY: (Math.random() - 0.5) * 0.5, // NOSONAR
+        opacity: Math.random() * 0.5 + 0.3, // NOSONAR
       });
     }
 
