@@ -1,16 +1,69 @@
-# React + Vite
+Blood Donor Finder – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the React frontend for the Blood Donor Finder System.
+It allows users to register as blood donors, search donors by blood group, and view donor availability.
 
-Currently, two official plugins are available:
+🚀 Live Frontend URL (Vercel)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉 https://blood-donor-finder-frontend.vercel.app
 
-## React Compiler
+⚠️ Important Usage Note
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This frontend depends on the backend service.
 
-## Expanding the ESLint configuration
+👉 Before using the frontend:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Open the backend URL once
+https://feedback-backend-u96e.onrender.com/api/complaints
+
+(Replace with your Blood Donor backend Render link if different)
+
+Wait for the backend to start (Render Free Plan may take 30–60 seconds)
+
+Then open the frontend URL
+
+If backend is not running, donor data may not load.
+
+📊 Project Presentation
+
+👉 Download Project PPT
+(Add your PPT link here)
+
+🛠️ Tech Stack
+
+React
+
+Axios
+
+HTML / CSS
+
+JavaScript
+
+Vercel (Deployment)
+
+SonarCloud
+
+▶️ Run Locally
+git clone https://github.com/vasanth005-117/blood-donor-finder-frontend.git
+cd blood-donor-finder-frontend
+npm install
+npm start
+
+
+Frontend runs at:
+
+👉 http://localhost:3000
+
+🔍 SonarCloud
+
+SonarCloud analysis configured
+
+Quality Gate passed successfully ✅
+
+🔗 Backend
+
+👉 Backend Repository:
+https://github.com/vasanth005-117/blood-donor-finder-backend
+
+👉 Live Backend URL:
+(Add your Render backend link here)
