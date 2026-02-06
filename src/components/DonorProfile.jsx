@@ -38,7 +38,8 @@ const DonorProfile = () => {
       setProfile(formData);
       setEditing(false);
       alert('Profile updated successfully!');
-    } catch (error) {
+    } catch (_error) {
+      console.error('Failed to update profile:', _error);
       alert('Failed to update profile');
     }
   };
@@ -73,8 +74,9 @@ const DonorProfile = () => {
                   {editing ? (
                     <div className="edit-form">
                       <div className="info-row">
-                        <label>Email:</label>
+                        <label htmlFor="email">Email:</label>
                         <input
+                          id="email"
                           type="email"
                           name="email"
                           value={formData.email}
@@ -82,8 +84,9 @@ const DonorProfile = () => {
                         />
                       </div>
                       <div className="info-row">
-                        <label>Phone:</label>
+                        <label htmlFor="phone">Phone:</label>
                         <input
+                          id="phone"
                           type="tel"
                           name="phone"
                           value={formData.phone}
@@ -91,8 +94,9 @@ const DonorProfile = () => {
                         />
                       </div>
                       <div className="info-row">
-                        <label>City:</label>
+                        <label htmlFor="city">City:</label>
                         <input
+                          id="city"
                           type="text"
                           name="city"
                           value={formData.city}
@@ -100,8 +104,9 @@ const DonorProfile = () => {
                         />
                       </div>
                       <div className="info-row">
-                        <label>State:</label>
+                        <label htmlFor="state">State:</label>
                         <input
+                          id="state"
                           type="text"
                           name="state"
                           value={formData.state}
@@ -109,8 +114,9 @@ const DonorProfile = () => {
                         />
                       </div>
                       <div className="info-row">
-                        <label>Pincode:</label>
+                        <label htmlFor="pincode">Pincode:</label>
                         <input
+                          id="pincode"
                           type="text"
                           name="pincode"
                           value={formData.pincode}

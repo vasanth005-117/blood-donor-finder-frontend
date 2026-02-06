@@ -235,14 +235,14 @@ td {
 }
 
 .badge.available {
-  background: rgba(40, 167, 69, 0.3);
-  color: #4caf50;
+  background: rgba(20, 80, 30, 0.8);
+  color: #b4ffb4;
   border: 1px solid rgba(40, 167, 69, 0.5);
 }
 
 .badge.unavailable {
-  background: rgba(220, 20, 60, 0.3);
-  color: #ff6b9d;
+  background: rgba(100, 10, 30, 0.8);
+  color: #ffd4dd;
   border: 1px solid rgba(220, 20, 60, 0.5);
 }
 
@@ -255,19 +255,19 @@ td {
 }
 
 .urgency.low {
-  background: rgba(40, 167, 69, 0.3);
-  color: #4caf50;
+  background: rgba(20, 80, 30, 0.8);
+  color: #b4ffb4;
 }
 
 .urgency.medium {
-  background: rgba(255, 193, 7, 0.3);
-  color: #ffc107;
+  background: rgba(120, 90, 0, 0.8);
+  color: #fff4c4;
 }
 
 .urgency.high,
 .urgency.critical {
-  background: rgba(255, 107, 53, 0.3);
-  color: #ff9f5a;
+  background: rgba(120, 50, 25, 0.8);
+  color: #ffdccc;
   animation: pulse 2s infinite;
 }
 
@@ -280,13 +280,13 @@ td {
 }
 
 .status.open {
-  background: rgba(135, 206, 235, 0.3);
-  color: #87ceeb;
+  background: rgba(50, 100, 110, 0.8);
+  color: #daf3ff;
 }
 
 .status.closed {
-  background: rgba(40, 167, 69, 0.3);
-  color: #4caf50;
+  background: rgba(20, 80, 30, 0.8);
+  color: #b4ffb4;
 }
 
 .action-btn {
@@ -307,9 +307,9 @@ td {
 }
 
 .action-btn.delete:hover {
-  background: rgba(220, 20, 60, 0.3);
+  background: rgba(100, 10, 30, 0.8);
   border-color: rgba(220, 20, 60, 0.6);
-  color: #ff6b9d;
+  color: #ffd4dd;
 }
 
 @media (max-width: 768px) {

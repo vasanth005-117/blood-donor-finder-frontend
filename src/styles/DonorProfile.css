@@ -58,14 +58,14 @@
 }
 
 .status.available {
-  background: rgba(40, 167, 69, 0.3);
-  color: #4caf50;
+  background: rgba(20, 80, 30, 0.8);
+  color: #b4ffb4;
   border: 1px solid rgba(40, 167, 69, 0.5);
 }
 
 .status.unavailable {
-  background: rgba(220, 20, 60, 0.3);
-  color: #ff6b9d;
+  background: rgba(100, 10, 30, 0.8);
+  color: #ffd4dd;
   border: 1px solid rgba(220, 20, 60, 0.5);
 }
 
@@ -127,7 +127,7 @@
   padding: 0.75rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.3);
   color: #fff;
   font-size: 1rem;
   transition: all 0.3s ease;
@@ -163,7 +163,7 @@
 
 .stat-value {
   display: block;
-  color: #4caf50;
+  color: #6fdc6f;
   font-weight: bold;
   font-size: 1.1rem;
 }
@@ -186,7 +186,7 @@ button[class*='btn-'] {
 }
 
 .btn-edit {
-  background: linear-gradient(135deg, #28a745, #20c997);
+  background: linear-gradient(135deg, #1d7a33, #158765);
   color: white;
 }
 
@@ -196,7 +196,7 @@ button[class*='btn-'] {
 }
 
 .btn-availability {
-  background: linear-gradient(135deg, #ff6b9d, #dc143c);
+  background: linear-gradient(135deg, #cc1f5a, #a40f2e);
   color: white;
 }
 
@@ -206,7 +206,7 @@ button[class*='btn-'] {
 }
 
 .btn-save {
-  background: linear-gradient(135deg, #28a745, #20c997);
+  background: linear-gradient(135deg, #1d7a33, #158765);
   color: white;
 }
 
@@ -216,9 +216,9 @@ button[class*='btn-'] {
 }
 
 .btn-cancel {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.4);
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .btn-cancel:hover {

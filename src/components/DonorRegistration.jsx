@@ -44,7 +44,8 @@ const DonorRegistration = () => {
         pincode: '',
       });
       setTimeout(() => setMessage(''), 3000);
-    } catch (error) {
+    } catch (_error) {
+      console.error('Registration failed:', _error);
       setMessage('❌ Registration failed. Try again.');
     }
     setLoading(false);
@@ -61,8 +62,9 @@ const DonorRegistration = () => {
         <form onSubmit={handleSubmit} className="registration-form">
           <div className="form-row">
             <div className="form-group">
-              <label>Full Name *</label>
+              <label htmlFor="name">Full Name *</label>
               <input
+                id="name"
                 type="text"
                 name="name"
                 value={formData.name}
@@ -72,8 +74,9 @@ const DonorRegistration = () => {
               />
             </div>
             <div className="form-group">
-              <label>Email *</label>
+              <label htmlFor="reg-email">Email *</label>
               <input
+                id="reg-email"
                 type="email"
                 name="email"
                 value={formData.email}
@@ -86,8 +89,9 @@ const DonorRegistration = () => {
 
           <div className="form-row">
             <div className="form-group">
-              <label>Phone *</label>
+              <label htmlFor="reg-phone">Phone *</label>
               <input
+                id="reg-phone"
                 type="tel"
                 name="phone"
                 value={formData.phone}
@@ -98,8 +102,9 @@ const DonorRegistration = () => {
               />
             </div>
             <div className="form-group">
-              <label>Blood Group *</label>
+              <label htmlFor="reg-bloodGroup">Blood Group *</label>
               <select
+                id="reg-bloodGroup"
                 name="bloodGroup"
                 value={formData.bloodGroup}
                 onChange={handleChange}
@@ -120,8 +125,9 @@ const DonorRegistration = () => {
 
           <div className="form-row">
             <div className="form-group">
-              <label>Date of Birth *</label>
+              <label htmlFor="dateOfBirth">Date of Birth *</label>
               <input
+                id="dateOfBirth"
                 type="date"
                 name="dateOfBirth"
                 value={formData.dateOfBirth}
@@ -130,8 +136,9 @@ const DonorRegistration = () => {
               />
             </div>
             <div className="form-group">
-              <label>City *</label>
+              <label htmlFor="reg-city">City *</label>
               <input
+                id="reg-city"
                 type="text"
                 name="city"
                 value={formData.city}
@@ -144,8 +151,9 @@ const DonorRegistration = () => {
 
           <div className="form-row">
             <div className="form-group">
-              <label>Address *</label>
+              <label htmlFor="address">Address *</label>
               <input
+                id="address"
                 type="text"
                 name="address"
                 value={formData.address}
@@ -155,8 +163,9 @@ const DonorRegistration = () => {
               />
             </div>
             <div className="form-group">
-              <label>Pincode *</label>
+              <label htmlFor="reg-pincode">Pincode *</label>
               <input
+                id="reg-pincode"
                 type="text"
                 name="pincode"
                 value={formData.pincode}
@@ -169,8 +178,9 @@ const DonorRegistration = () => {
           </div>
 
           <div className="form-group full-width">
-            <label>State *</label>
+            <label htmlFor="reg-state">State *</label>
             <input
+              id="reg-state"
               type="text"
               name="state"
               value={formData.state}

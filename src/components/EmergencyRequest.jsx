@@ -48,7 +48,8 @@ const EmergencyRequest = () => {
         additionalInfo: '',
       });
       setTimeout(() => setMessage(''), 4000);
-    } catch (error) {
+    } catch (_error) {
+      console.error('Failed to create emergency request:', _error);
       setMessage('❌ Failed to create request. Please try again.');
     }
     setLoading(false);
@@ -70,8 +71,9 @@ const EmergencyRequest = () => {
               <h3>🩸 Blood Requirements</h3>
               <div className="form-row">
                 <div className="form-group">
-                  <label>Blood Group *</label>
+                  <label htmlFor="em-bloodGroup">Blood Group *</label>
                   <select
+                    id="em-bloodGroup"
                     name="bloodGroup"
                     value={formData.bloodGroup}
                     onChange={handleChange}
@@ -89,8 +91,9 @@ const EmergencyRequest = () => {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label>Units Required *</label>
+                  <label htmlFor="requiredUnits">Units Required *</label>
                   <input
+                    id="requiredUnits"
                     type="number"
                     name="requiredUnits"
                     value={formData.requiredUnits}
@@ -108,8 +111,9 @@ const EmergencyRequest = () => {
               <h3>🏥 Hospital Details</h3>
               <div className="form-row">
                 <div className="form-group">
-                  <label>Hospital Name *</label>
+                  <label htmlFor="hospitalName">Hospital Name *</label>
                   <input
+                    id="hospitalName"
                     type="text"
                     name="hospitalName"
                     value={formData.hospitalName}
@@ -119,8 +123,9 @@ const EmergencyRequest = () => {
                   />
                 </div>
                 <div className="form-group">
-                  <label>Location *</label>
+                  <label htmlFor="hospitalLocation">Location *</label>
                   <input
+                    id="hospitalLocation"
                     type="text"
                     name="hospitalLocation"
                     value={formData.hospitalLocation}
@@ -137,8 +142,9 @@ const EmergencyRequest = () => {
               <h3>👤 Patient Information</h3>
               <div className="form-row">
                 <div className="form-group">
-                  <label>Patient Name *</label>
+                  <label htmlFor="patientName">Patient Name *</label>
                   <input
+                    id="patientName"
                     type="text"
                     name="patientName"
                     value={formData.patientName}
@@ -148,8 +154,9 @@ const EmergencyRequest = () => {
                   />
                 </div>
                 <div className="form-group">
-                  <label>Age *</label>
+                  <label htmlFor="patientAge">Age *</label>
                   <input
+                    id="patientAge"
                     type="number"
                     name="patientAge"
                     value={formData.patientAge}
@@ -162,8 +169,9 @@ const EmergencyRequest = () => {
               </div>
 
               <div className="form-group full-width">
-                <label>Medical Condition *</label>
+                <label htmlFor="medicalCondition">Medical Condition *</label>
                 <textarea
+                  id="medicalCondition"
                   name="medicalCondition"
                   value={formData.medicalCondition}
                   onChange={handleChange}
@@ -179,8 +187,9 @@ const EmergencyRequest = () => {
               <h3>⚠️ Urgency & Contact</h3>
               <div className="form-row">
                 <div className="form-group">
-                  <label>Urgency Level *</label>
+                  <label htmlFor="urgencyLevel">Urgency Level *</label>
                   <select
+                    id="urgencyLevel"
                     name="urgencyLevel"
                     value={formData.urgencyLevel}
                     onChange={handleChange}
@@ -192,8 +201,9 @@ const EmergencyRequest = () => {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label>Contact Person *</label>
+                  <label htmlFor="contactPerson">Contact Person *</label>
                   <input
+                    id="contactPerson"
                     type="text"
                     name="contactPerson"
                     value={formData.contactPerson}
@@ -205,8 +215,9 @@ const EmergencyRequest = () => {
               </div>
 
               <div className="form-group full-width">
-                <label>Contact Phone *</label>
+                <label htmlFor="contactPhone">Contact Phone *</label>
                 <input
+                  id="contactPhone"
                   type="tel"
                   name="contactPhone"
                   value={formData.contactPhone}
@@ -220,8 +231,9 @@ const EmergencyRequest = () => {
 
             {/* Additional Info */}
             <div className="form-group full-width">
-              <label>Additional Information</label>
+              <label htmlFor="additionalInfo">Additional Information</label>
               <textarea
+                id="additionalInfo"
                 name="additionalInfo"
                 value={formData.additionalInfo}
                 onChange={handleChange}

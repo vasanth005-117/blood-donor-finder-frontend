@@ -64,10 +64,14 @@
   padding: 0.75rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.3);
   color: #fff;
   font-size: 1rem;
   transition: all 0.3s ease;
+}
+
+.search-group input::placeholder {
+  color: rgba(200, 200, 200, 1);
 }
 
 .search-group input:focus,
@@ -80,7 +84,7 @@
 
 .search-btn {
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #87ceeb, #4a90e2);
+  background: linear-gradient(135deg, #1d5a9a, #0d4580);
   color: white;
   border: none;
   border-radius: 8px;
@@ -157,7 +161,7 @@
   width: 100%;
   padding: 0.75rem;
   margin-top: 1rem;
-  background: linear-gradient(135deg, #4a90e2, #87ceeb);
+  background: linear-gradient(135deg, #2171c9, #4a90e2);
   color: white;
   border: none;
   border-radius: 8px;
@@ -168,7 +172,7 @@
 
 .contact-btn:hover {
   transform: scale(1.02);
-  box-shadow: 0 8px 20px rgba(74, 144, 226, 0.5);
+  box-shadow: 0 8px 20px rgba(135, 206, 235, 0.5);
 }
 
 .contact-btn.unavailable {

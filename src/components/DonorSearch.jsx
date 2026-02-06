@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../styles/DonorSearch.css';
 import axios from 'axios';
 
@@ -51,8 +51,9 @@ const DonorSearch = () => {
           <form onSubmit={handleSearch} className="search-form">
             <div className="search-inputs">
               <div className="search-group">
-                <label>Blood Group *</label>
+                <label htmlFor="search-bloodGroup">Blood Group *</label>
                 <select
+                  id="search-bloodGroup"
                   name="bloodGroup"
                   value={searchParams.bloodGroup}
                   onChange={handleChange}
@@ -71,8 +72,9 @@ const DonorSearch = () => {
               </div>
 
               <div className="search-group">
-                <label>City *</label>
+                <label htmlFor="search-city">City *</label>
                 <input
+                  id="search-city"
                   type="text"
                   name="city"
                   value={searchParams.city}
@@ -91,9 +93,8 @@ const DonorSearch = () => {
 
         {searched && (
           <div className="results-section">
-            {loading ? (
-              <p className="loading">Loading donors...</p>
-            ) : donors.length > 0 ? (
+            {loading && <p className="loading">Loading donors...</p>}
+            {!loading && donors.length > 0 && (
               <div className="donors-grid">
                 {donors.map((donor) => (
                   <div key={donor.id} className="donor-card">
@@ -116,7 +117,8 @@ const DonorSearch = () => {
                   </div>
                 ))}
               </div>
-            ) : (
+            )}
+            {!loading && donors.length === 0 && (
               <p className="no-results">❌ No donors found. Try different criteria.</p>
             )}
           </div>

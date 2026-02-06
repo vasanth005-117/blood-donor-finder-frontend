@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor Finder - Project Presentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a1a;
+            overflow: hidden;
+        }
+
+        .presentation {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100vh;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        /* Slide Backgrounds */
+        .slide-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .slide-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .slide-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .slide-4 {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .slide-5 {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        /* Content Styling */
+        .slide-content {
+            text-align: center;
+            color: white;
+            max-width: 1000px;
+            z-index: 2;
+        }
+
+        .slide-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: slideInDown 0.8s ease;
+        }
+
+        .slide-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .slide-content p, .slide-content li {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .slide-content ul {
+            list-style: none;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .slide-content li {
+            margin: 15px 0;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .slide-content li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        /* Feature Boxes */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .feature-box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-box p {
+            font-size: 1.1rem;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .tech-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Controls */
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 100;
+        }
+
+        button {
+            background: rgba(0, 0, 0, 0.45);
+            border: 2px solid white;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: rgba(0, 0, 0, 0.55);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Animations */
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .slide.active .slide-content {
+            animation: fadeIn 0.8s ease;
+        }
+
+        /* Decorative Elements */
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .circle-1 {
+            width: 400px;
+            height: 400px;
+            background: white;
+            top: -100px;
+            right: -100px;
+        }
+
+        .circle-2 {
+            width: 300px;
+            height: 300px;
+            background: white;
+            bottom: -50px;
+            left: -50px;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .two-column-content {
+            text-align: left;
+        }
+
+        .two-column-content h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .architecture-diagram {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            font-size: 1.1rem;
+            font-family: monospace;
+            line-height: 2;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation">
+        <!-- Slide 1: Title Slide -->
+        <div class="slide slide-1 active">
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+            <div class="slide-content">
+                <h1>🩸 Blood Donor Finder</h1>
+                <p style="font-size: 1.8rem; margin: 30px 0;">Connect Lifesavers with Those in Need</p>
+                <p style="font-size: 1.3rem; opacity: 0.9;">A Modern Platform for Efficient Blood Donation Management</p>
+                <div class="tech-stack" style="margin-top: 50px;">
+                    <div class="tech-badge">React + Vite</div>
+                    <div class="tech-badge">Node.js Backend</div>
+                    <div class="tech-badge">GitHub</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Project Overview -->
+        <div class="slide slide-2">
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+            <div class="slide-content">
+                <h2>Project Overview</h2>
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <h3>🎯 Goal</h3>
+                        <p>Create a user-friendly platform to connect blood donors with recipients in emergency situations.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>🌍 Scope</h3>
+                        <p>Full-stack application with donor registration, search, profile management, and admin dashboard.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>👥 Users</h3>
+                        <p>Donors, Recipients, Admin staff, and Emergency coordinators.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>⚡ Benefits</h3>
+                        <p>Fast donor matching, Emergency requests, Real-time updates, and Analytics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Frontend Architecture -->
+        <div class="slide slide-3">
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+            <div class="slide-content">
+                <h2>Frontend Technology Stack</h2>
+                <div class="two-column">
+                    <div class="two-column-content">
+                        <h3>Core Technologies</h3>
+                        <ul style="font-size: 1.2rem;">
+                            <li><span class="emphasis">React 19.2</span> - Modern UI library</li>
+                            <li><span class="emphasis">Vite 7.2</span> - Fast build tool</li>
+                            <li><span class="emphasis">React Router</span> - Navigation</li>
+                            <li><span class="emphasis">Axios</span> - API communication</li>
+                        </ul>
+                    </div>
+                    <div class="two-column-content">
+                        <h3>Key Features</h3>
+                        <ul style="font-size: 1.2rem;">
+                            <li>Responsive Design</li>
+                            <li>Real-time Updates</li>
+                            <li>Beautiful UI with CSS Gradients</li>
+                            <li>Mobile Optimized</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tech-stack" style="margin-top: 40px;">
+                    <div class="tech-badge">React</div>
+                    <div class="tech-badge">Vite</div>
+                    <div class="tech-badge">React Router</div>
+                    <div class="tech-badge">Axios</div>
+                    <div class="tech-badge">ESLint</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Components & Features -->
+        <div class="slide slide-4">
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+            <div class="slide-content">
+                <h2>Frontend Components</h2>
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <h3>📝 Donor Registration</h3>
+                        <p>Easy form for donors to create accounts and provide health information.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>🔍 Donor Search</h3>
+                        <p>Advanced search to find compatible blood donors by location and type.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>👤 Donor Profile</h3>
+                        <p>View and manage donor information, donation history, and availability.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>🚨 Emergency Request</h3>
+                        <p>Post urgent blood requests to reach available donors immediately.</p>
+                    </div>
+                </div>
+                <p style="margin-top: 40px; font-size: 1.2rem;">
+                    <span class="emphasis">+ Admin Dashboard</span> for analytics and management
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 5: GitHub & Deployment -->
+        <div class="slide slide-5">
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+            <div class="slide-content">
+                <h2>GitHub & Deployment</h2>
+                <div class="two-column">
+                    <div class="two-column-content">
+                        <h3>GitHub Repository</h3>
+                        <p style="font-size: 1.1rem;">
+                            <span class="emphasis">vasanth005-117/blood-donor-finder-frontend</span>
+                        </p>
+                        <ul style="margin-top: 20px;">
+                            <li>Version Control</li>
+                            <li>Continuous Integration</li>
+                            <li>Code Review Workflow</li>
+                            <li>Documentation</li>
+                        </ul>
+                    </div>
+                    <div class="two-column-content">
+                        <h3>Deployment</h3>
+                        <p style="font-size: 1.1rem; margin-bottom: 20px;">
+                            <span class="emphasis">Vercel</span> - Production Hosting
+                        </p>
+                        <ul>
+                            <li>Auto-deploy on push</li>
+                            <li>Node 20.x LTS</li>
+                            <li>SPA Routing</li>
+                            <li>Fast Build & Deploy</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="margin-top: 40px; font-size: 1.2rem;">
+                    🚀 <span class="emphasis">Live Demo</span> - Accessible via Vercel deployment URL
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-counter">
+        <span id="current-slide">1</span> / <span id="total-slides">5</span>
+    </div>
+
+    <div class="controls">
+        <button onclick="previousSlide()">← Previous</button>
+        <button onclick="nextSlide()">Next →</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide].classList.add('active');
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') previousSlide();
+        });
+
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>

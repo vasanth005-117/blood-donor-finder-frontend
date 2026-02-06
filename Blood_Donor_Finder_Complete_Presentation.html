@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor Finder - Comprehensive Presentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0e27;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .presentation {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .slide {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Dark Unique Gradient Backgrounds */
+        .slide-1 {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+
+        .slide-2 {
+            background: linear-gradient(135deg, #2c003e 0%, #3d0814 50%, #1e0000 100%);
+        }
+
+        .slide-3 {
+            background: linear-gradient(135deg, #00002e 0%, #001a3d 50%, #003052 100%);
+        }
+
+        .slide-4 {
+            background: linear-gradient(135deg, #002920 0%, #003d2b 50%, #00472d 100%);
+        }
+
+        .slide-5 {
+            background: linear-gradient(135deg, #3d0000 0%, #520000 50%, #2b0000 100%);
+        }
+
+        .slide-6 {
+            background: linear-gradient(135deg, #1a0033 0%, #2d0052 50%, #3d006b 100%);
+        }
+
+        .slide-7 {
+            background: linear-gradient(135deg, #1f1c2c 0%, #2a2438 50%, #3b2f4a 100%);
+        }
+
+        .slide-8 {
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+        }
+
+        .slide-9 {
+            background: linear-gradient(135deg, #330000 0%, #5c0028 50%, #4d0036 100%);
+        }
+
+        .slide-10 {
+            background: linear-gradient(135deg, #000428 0%, #004e92 50%, #002a52 100%);
+        }
+
+        .slide-11 {
+            background: linear-gradient(135deg, #360033 0%, #0b8793 50%, #004d5c 100%);
+        }
+
+        .slide-12 {
+            background: linear-gradient(135deg, #2c1e3f 0%, #1e1533 50%, #392b52 100%);
+        }
+
+        /* Content Styling */
+        .slide-content {
+            text-align: center;
+            color: white;
+            max-width: 1100px;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .slide-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            animation: slideInDown 0.8s ease;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .slide-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: slideInUp 0.8s ease;
+        }
+
+        .slide-content p, .slide-content li {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            line-height: 1.7;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .slide-content ul {
+            list-style: none;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .slide-content li {
+            margin: 12px 0;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .slide-content li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        /* Feature Boxes */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .features-grid-3 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .feature-box {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.3s ease;
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px) perspective(1000px) rotateY(5deg);
+            background: rgba(255, 255, 255, 0.18);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .feature-box p {
+            font-size: 1rem;
+        }
+
+        /* ASCII Art / Diagram Container */
+        .diagram-container {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            font-family: monospace;
+            font-size: 0.95rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            overflow-x: auto;
+        }
+
+        .diagram {
+            color: #e0e0ff;
+            line-height: 1.4;
+            white-space: pre;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .two-column-content {
+            text-align: left;
+        }
+
+        .two-column-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* SVG Container */
+        .svg-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Tech Stack Badges */
+        .tech-stack {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .tech-badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .tech-badge:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.1);
+        }
+
+        /* Issue/Solution Boxes */
+        .issue-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .issue-box, .solution-box {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .issue-box {
+            border-left: 5px solid #ff6b6b;
+        }
+
+        .solution-box {
+            border-left: 5px solid #51cf66;
+        }
+
+        .issue-box h3, .solution-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        /* Controls */
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        button {
+            background: rgba(0, 0, 0, 0.45);
+            border: 2px solid white;
+            color: white;
+            padding: 15px 20px;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            font-weight: 600;
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.08);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: rgba(0, 0, 0, 0.55);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-weight: 600;
+            z-index: 100;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: rgba(0, 0, 0, 0.45);
+            border: 2px solid white;
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .scroll-top:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Print styles for PDF conversion */
+        @media print {
+            body {
+                overflow: visible;
+            }
+
+            .slide {
+                page-break-after: always;
+                page-break-inside: avoid;
+                min-height: 100vh;
+                height: 100vh;
+                display: flex !important;
+            }
+
+            .slide:last-child {
+                page-break-after: auto;
+            }
+
+            .controls, .scroll-top, .slide-counter {
+                display: none !important;
+            }
+
+            .slide-content h1 {
+                font-size: 3rem;
+            }
+
+            .slide-content h2 {
+                font-size: 2.3rem;
+            }
+
+            .slide-content p, .slide-content li {
+                font-size: 1.1rem;
+            }
+
+            .feature-box h3 {
+                font-size: 1.3rem;
+            }
+
+            .diagram {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* PDF-friendly display */
+        @page {
+            size: A4 landscape;
+            margin: 0;
+        }
+
+        /* Animations */
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .slide.active .slide-content {
+            animation: fadeIn 0.8s ease;
+        }
+
+        /* Slide separator */
+        .slide::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Decorative Elements */
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        .circle-1 {
+            width: 500px;
+            height: 500px;
+            background: white;
+            top: -150px;
+            right: -150px;
+        }
+
+        .circle-2 {
+            width: 400px;
+            height: 400px;
+            background: white;
+            bottom: -100px;
+            left: -100px;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        /* Icon Styling */
+        .icon {
+            font-size: 3rem;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation">
+        <!-- Slide 1: Project Name -->
+        <div class="slide slide-1 active">
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+            <div class="slide-content">
+                <h1>🩸 Blood Donor Finder</h1>
+                <p style="font-size: 1.8rem; margin: 30px 0; font-weight: 600;">Connect Lifesavers with Those in Need</p>
+                <div class="diagram-container">
+                    <div class="diagram">
+    ╔══════════════════════════════════════╗
+    ║   INTELLIGENT BLOOD DONATION PLATFORM ║
+    ║   Saving Lives Through Technology     ║
+    ╚══════════════════════════════════════╝
+                    </div>
+                </div>
+                <div class="tech-stack" style="margin-top: 50px;">
+                    <div class="tech-badge">Full Stack Application</div>
+                    <div class="tech-badge">Real-time Updates</div>
+                    <div class="tech-badge">Production Ready</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Project Overview -->
+        <div class="slide slide-2">
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+            <div class="slide-content">
+                <h2>📋 Project Overview</h2>
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <h3><span class="icon">🎯</span>Mission</h3>
+                        <p>Create a unified platform connecting blood donors with recipients in real-time during emergencies</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3><span class="icon">🌍</span>Vision</h3>
+                        <p>Reduce blood shortage emergencies through fast, efficient donor-recipient matching</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3><span class="icon">⚙️</span>Functionality</h3>
+                        <p>Registration, Search, Profiles, Emergency Requests, Admin Analytics, Real-time Notifications</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3><span class="icon">👥</span>Users</h3>
+                        <p>Donors, Recipients, Hospital Admins, Emergency Coordinators, System Administrators</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: System Architecture -->
+        <div class="slide slide-3">
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+            <div class="slide-content">
+                <h2>🏗️ System Architecture</h2>
+                <div class="diagram-container">
+                    <div class="diagram">
+┌─────────────────────────────────────────────────────────┐
+│                    CLIENT LAYER                          │
+│          React + Vite (Modern SPA)                      │
+│     Responsive UI | Real-time Updates | Dark Theme      │
+└──────────────────┬──────────────────────────────────────┘
+                   │ HTTPS/REST API
+┌──────────────────┴──────────────────────────────────────┐
+│              APPLICATION LAYER                          │
+│        Node.js + Express Backend                        │
+│   Authentication | Business Logic | API Routes          │
+└──────────────────┬──────────────────────────────────────┘
+                   │ Database Queries
+┌──────────────────┴──────────────────────────────────────┐
+│                 DATA LAYER                              │
+│         MongoDB | Caching | File Storage                │
+└─────────────────────────────────────────────────────────┘
+                    </div>
+                </div>
+                <p style="margin-top: 30px; font-size: 1.3rem;">
+                    <span class="emphasis">Microservices-Ready Architecture</span> with Docker containerization
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 4: Backend Development -->
+        <div class="slide slide-4">
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+            <div class="slide-content">
+                <h2>🔧 Backend Development</h2>
+                <div class="two-column">
+                    <div class="two-column-content">
+                        <h3>Technology Stack</h3>
+                        <ul>
+                            <li><span class="emphasis">Node.js 18+</span> - Runtime</li>
+                            <li><span class="emphasis">Express.js</span> - REST API Framework</li>
+                            <li><span class="emphasis">MongoDB</span> - NoSQL Database</li>
+                            <li><span class="emphasis">JWT</span> - Authentication</li>
+                            <li><span class="emphasis">Socket.io</span> - Real-time Comm</li>
+                        </ul>
+                    </div>
+                    <div class="two-column-content">
+                        <h3>Core Features</h3>
+                        <ul>
+                            <li>RESTful API Endpoints</li>
+                            <li>User Authentication & Authorization</li>
+                            <li>Real-time Notifications</li>
+                            <li>Database Optimization</li>
+                            <li>Error Handling & Logging</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tech-stack">
+                    <div class="tech-badge">Node.js</div>
+                    <div class="tech-badge">Express</div>
+                    <div class="tech-badge">MongoDB</div>
+                    <div class="tech-badge">JWT</div>
+                    <div class="tech-badge">Socket.io</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Backend Execution -->
+        <div class="slide slide-5">
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+            <div class="slide-content">
+                <h2>⚡ Backend Execution & API</h2>
+                <div class="diagram-container">
+                    <div class="diagram">
+API ENDPOINTS STRUCTURE
+═════════════════════════════════════
+
+/api/auth
+  POST /register        - User Registration
+  POST /login           - User Authentication
+  POST /logout          - Session Termination
+
+/api/donors
+  GET  /                - List All Donors
+  POST /                - Create Donor Profile
+  GET  /:id             - Get Donor Details
+  PUT  /:id             - Update Profile
+
+/api/search
+  GET  ?bloodType=O     - Search by Blood Type
+  GET  ?location=city   - Search by Location
+
+/api/emergency
+  POST /request         - Create Emergency Request
+  GET  /active          - Active Requests
+  PUT  /:id/fulfill     - Fulfill Request
+
+/api/admin
+  GET  /analytics       - Dashboard Analytics
+  GET  /reports         - Generate Reports
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Frontend Development -->
+        <div class="slide slide-6">
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+            <div class="slide-content">
+                <h2>🎨 Frontend Development</h2>
+                <div class="features-grid features-grid-3">
+                    <div class="feature-box">
+                        <h3><span class="icon">⚛️</span>React 19.2</h3>
+                        <p>Modern React with Hooks, Context API, and functional components</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3><span class="icon">⚡</span>Vite 7.2</h3>
+                        <p>Lightning-fast build tool with HMR and optimized production builds</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3><span class="icon">🎭</span>Styling</h3>
+                        <p>CSS Gradients, Animations, Responsive Design, Dark Theme</p>
+                    </div>
+                </div>
+                <div class="two-column" style="margin-top: 40px;">
+                    <div class="two-column-content">
+                        <h3>Components</h3>
+                        <ul>
+                            <li>Donor Registration Form</li>
+                            <li>Advanced Search</li>
+                            <li>Donor Profiles</li>
+                            <li>Emergency Requests</li>
+                        </ul>
+                    </div>
+                    <div class="two-column-content">
+                        <h3>Features</h3>
+                        <ul>
+                            <li>Responsive Mobile UI</li>
+                            <li>Real-time Updates</li>
+                            <li>Admin Dashboard</li>
+                            <li>Beautiful Animations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Version Control & CI Pipeline -->
+        <div class="slide slide-7">
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+            <div class="slide-content">
+                <h2>📦 Version Control & CI Pipeline</h2>
+                <div class="diagram-container">
+                    <div class="diagram">
+GIT WORKFLOW
+═════════════════════════════════════
+
+Developer        →  Git Repository    →  GitHub
+                        ↓
+                   Branch Protection
+                   (PR Reviews)
+                        ↓
+                   Status Checks
+                   (Tests, Lint)
+                        ↓
+                   Merge to Main
+                        ↓
+                   Trigger CI/CD
+                   Pipeline
+                        ↓
+                   Build & Test
+                        ↓
+                   Deploy to Staging
+                    </div>
+                </div>
+                <div class="tech-stack">
+                    <div class="tech-badge">GitHub</div>
+                    <div class="tech-badge">Git Workflows</div>
+                    <div class="tech-badge">Branch Protection</div>
+                    <div class="tech-badge">PR Reviews</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: CI & SonarQube Integration -->
+        <div class="slide slide-8">
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+            <div class="slide-content">
+                <h2>🔍 CI & SonarQube Integration</h2>
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <h3><span class="icon">🤖</span>GitHub Actions</h3>
+                        <p>Automated testing, linting, and build verification on every push</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3><span class="icon">📊</span>SonarQube</h3>
+                        <p>Code quality analysis, security scanning, and coverage reporting</p>
+                    </div>
+                </div>
+                <div class="diagram-container" style="margin-top: 40px;">
+                    <div class="diagram">
+CI/CD PIPELINE STAGES
+═════════════════════════════════════
+
+Push to GitHub
+     ↓
+✓ ESLint Check       (Code Quality)
+✓ Unit Tests         (Functionality)
+✓ Build Test         (Compilation)
+✓ SonarQube Scan     (Security & Quality)
+✓ Code Coverage      (Test Coverage)
+✓ Security Checks    (Vulnerability Scan)
+     ↓
+Pass All Checks
+     ↓
+Ready for Deployment
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Backend Dockerization -->
+        <div class="slide slide-9">
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+            <div class="slide-content">
+                <h2>🐳 Backend Dockerization</h2>
+                <div class="diagram-container">
+                    <div class="diagram">
+DOCKERFILE STRUCTURE
+═════════════════════════════════════
+
+FROM node:20-alpine
+    ↓
+WORKDIR /app
+    ↓
+COPY package*.json ./
+    ↓
+RUN npm ci --only=production
+    ↓
+COPY . .
+    ↓
+EXPOSE 5000
+    ↓
+CMD ["node", "server.js"]
+
+IMAGE: blood-donor-backend:latest
+REGISTRY: Docker Hub / GitHub Container Registry
+                    </div>
+                </div>
+                <div class="two-column" style="margin-top: 30px;">
+                    <div class="two-column-content">
+                        <h3>Benefits</h3>
+                        <ul>
+                            <li>Consistent Environment</li>
+                            <li>Easy Scaling</li>
+                            <li>Version Control</li>
+                            <li>Quick Deployment</li>
+                        </ul>
+                    </div>
+                    <div class="two-column-content">
+                        <h3>Orchestration</h3>
+                        <ul>
+                            <li>Kubernetes Ready</li>
+                            <li>Docker Compose</li>
+                            <li>Multi-stage Builds</li>
+                            <li>Health Checks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Frontend Deployment -->
+        <div class="slide slide-10">
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+            <div class="slide-content">
+                <h2>🚀 Frontend Deployment</h2>
+                <div class="two-column">
+                    <div class="two-column-content">
+                        <h3>Vercel Deployment</h3>
+                        <ul>
+                            <li><span class="emphasis">Auto-Deploy</span> on push to main</li>
+                            <li><span class="emphasis">Node 20.x</span> LTS Runtime</li>
+                            <li><span class="emphasis">SPA Routing</span> Configured</li>
+                            <li><span class="emphasis">Edge Functions</span> Ready</li>
+                            <li><span class="emphasis">Analytics</span> Enabled</li>
+                        </ul>
+                    </div>
+                    <div class="two-column-content">
+                        <h3>Build & Optimization</h3>
+                        <ul>
+                            <li>Vite Build Process</li>
+                            <li>Code Minification</li>
+                            <li>Asset Optimization</li>
+                            <li>CSS Optimization</li>
+                            <li>Performance Monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="diagram-container" style="margin-top: 40px;">
+                    <div class="diagram">
+Git Push → GitHub → Vercel → Build & Test → Deploy
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Issues Faced & Solutions -->
+        <div class="slide slide-11">
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+            <div class="slide-content">
+                <h2>⚠️ Issues Faced & Solutions</h2>
+                <div class="issue-solution">
+                    <div class="issue-box">
+                        <h3>❌ Issue 1: CSS Contrast</h3>
+                        <p>Text not meeting WCAG accessibility standards</p>
+                    </div>
+                    <div class="solution-box">
+                        <h3>✅ Solution</h3>
+                        <p>Updated button gradients with darker colors for proper contrast ratios</p>
+                    </div>
+                </div>
+                <div class="issue-solution" style="margin-top: 20px;">
+                    <div class="issue-box">
+                        <h3>❌ Issue 2: CSS Syntax Error</h3>
+                        <p>Duplicate closing braces breaking build</p>
+                    </div>
+                    <div class="solution-box">
+                        <h3>✅ Solution</h3>
+                        <p>Removed malformed CSS blocks and validated all stylesheets</p>
+                    </div>
+                </div>
+                <div class="issue-solution" style="margin-top: 20px;">
+                    <div class="issue-box">
+                        <h3>❌ Issue 3: Vercel Config</h3>
+                        <p>Missing deployment configuration and Node version conflicts</p>
+                    </div>
+                    <div class="solution-box">
+                        <h3>✅ Solution</h3>
+                        <p>Created vercel.json with proper Node 20.x, SPA routing, and build commands</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Thank You -->
+        <div class="slide slide-12">
+            <div class="decorative-circle circle-1"></div>
+            <div class="decorative-circle circle-2"></div>
+            <div class="slide-content">
+                <h1 style="font-size: 4rem; margin-bottom: 40px;">🙏 Thank You!</h1>
+                <div class="diagram-container" style="margin: 30px 0;">
+                    <div class="diagram" style="font-size: 1.2rem;">
+    ╔═══════════════════════════════════════════╗
+    ║  Blood Donor Finder Platform               ║
+    ║  Saving Lives Through Technology           ║
+    ║                                            ║
+    ║  Full Stack Development                   ║
+    ║  CI/CD Pipeline Integration               ║
+    ║  Production Ready Deployment              ║
+    ║  Quality & Security Focused                ║
+    ╚═══════════════════════════════════════════╝
+                    </div>
+                </div>
+                <p style="font-size: 1.4rem; margin: 30px 0; font-weight: 600;">
+                    Let's continue saving lives together! 💪❤️
+                </p>
+                <div class="tech-stack">
+                    <div class="tech-badge">GitHub: vasanth005-117</div>
+                    <div class="tech-badge">Live: Vercel Deployed</div>
+                    <div class="tech-badge">Production Ready</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-counter" id="slideCounter">
+        Slide <span id="current-slide">1</span> / <span id="total-slides">12</span>
+    </div>
+
+    <button class="scroll-top" onclick="scrollToTop()" title="Back to Top">↑</button>
+
+    <div class="controls">
+        <button onclick="scrollToSlide(getCurrentSlide() - 1)" title="Previous Slide">↑ Prev</button>
+        <button onclick="scrollToSlide(getCurrentSlide() + 1)" title="Next Slide">↓ Next</button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        // Update current slide based on scroll position
+        function updateCurrentSlide() {
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
+            
+            slides.forEach((slide, index) => {
+                const slideTop = slide.offsetTop;
+                const slideBottom = slideTop + slide.offsetHeight;
+                
+                if (scrollPosition >= slideTop && scrollPosition < slideBottom) {
+                    document.getElementById('current-slide').textContent = index + 1;
+                }
+            });
+        }
+
+        function getCurrentSlide() {
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
+            let currentSlide = 0;
+            
+            slides.forEach((slide, index) => {
+                const slideTop = slide.offsetTop;
+                const slideBottom = slideTop + slide.offsetHeight;
+                
+                if (scrollPosition >= slideTop && scrollPosition < slideBottom) {
+                    currentSlide = index;
+                }
+            });
+            
+            return currentSlide;
+        }
+
+        function scrollToSlide(slideIndex) {
+            if (slideIndex < 0) slideIndex = 0;
+            if (slideIndex >= totalSlides) slideIndex = totalSlides - 1;
+            
+            slides[slideIndex].scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Update slide counter on scroll
+        window.addEventListener('scroll', updateCurrentSlide);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const current = getCurrentSlide();
+            
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                scrollToSlide(current + 1);
+            }
+            if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                e.preventDefault();
+                scrollToSlide(current - 1);
+            }
+            if (e.key === 'Home') {
+                e.preventDefault();
+                scrollToTop();
+            }
+            if (e.key === 'End') {
+                e.preventDefault();
+                scrollToSlide(totalSlides - 1);
+            }
+        });
+
+        // Initial update
+        updateCurrentSlide();
+    </script>
+</body>
+</html>
+</html>
