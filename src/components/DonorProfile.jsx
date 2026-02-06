@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/DonorProfile.css';
 import axios from 'axios';
+import API_BASE_URL from '../config/api';
 
 const DonorProfile = () => {
   const [profile, setProfile] = useState(null);
@@ -12,7 +13,7 @@ const DonorProfile = () => {
     // Fetch donor profile - using mock ID 1 for demo
     const fetchProfile = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/donors/1');
+        const response = await axios.get(`${API_BASE_URL}/api/donors/1`);
         setProfile(response.data);
         setFormData(response.data);
       } catch (error) {
@@ -34,7 +35,7 @@ const DonorProfile = () => {
 
   const handleSave = async () => {
     try {
-      await axios.put(`http://localhost:8080/api/donors/${profile.id}`, formData);
+      await axios.put(`${API_BASE_URL}/api/donors/${profile.id}`, formData);
       setProfile(formData);
       setEditing(false);
       alert('Profile updated successfully!');

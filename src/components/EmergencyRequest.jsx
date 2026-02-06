@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/EmergencyRequest.css';
 import axios from 'axios';
+import API_BASE_URL from '../config/api';
 
 const EmergencyRequest = () => {
   const [formData, setFormData] = useState({
@@ -32,7 +33,7 @@ const EmergencyRequest = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post('http://localhost:8080/api/emergency-requests', formData);
+      await axios.post(`${API_BASE_URL}/api/emergency-requests`, formData);
       setMessage('🚨 Emergency request created! Donors will be notified.');
       setFormData({
         bloodGroup: '',

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/DonorRegistration.css';
 import axios from 'axios';
+import API_BASE_URL from '../config/api';
 
 const DonorRegistration = () => {
   const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ const DonorRegistration = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post('http://localhost:8080/api/donors', formData);
+      await axios.post(`${API_BASE_URL}/api/donors`, formData);
       setMessage('✅ Registered successfully!');
       setFormData({
         name: '',

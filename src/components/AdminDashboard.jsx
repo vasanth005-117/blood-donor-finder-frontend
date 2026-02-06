@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/AdminDashboard.css';
 import axios from 'axios';
+import API_BASE_URL from '../config/api';
 
 const AdminDashboard = () => {
   const [stats, setStats] = useState({
@@ -18,9 +19,9 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const donorsResponse = await axios.get('http://localhost:8080/api/donors');
+        const donorsResponse = await axios.get(`${API_BASE_URL}/api/donors`);
         const requestsResponse = await axios.get(
-          'http://localhost:8080/api/emergency-requests'
+          `${API_BASE_URL}/api/emergency-requests`
         );
 
         const totalDonors = donorsResponse.data.length;

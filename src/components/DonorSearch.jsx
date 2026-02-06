@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/DonorSearch.css';
 import axios from 'axios';
+import API_BASE_URL from '../config/api';
 
 const DonorSearch = () => {
   const [searchParams, setSearchParams] = useState({
@@ -30,7 +31,7 @@ const DonorSearch = () => {
     setLoading(true);
     setSearched(true);
     try {
-      const response = await axios.get('http://localhost:8080/api/donors/search', {
+      const response = await axios.get(`${API_BASE_URL}/api/donors/search`, {
         params: searchParams,
       });
       setDonors(response.data);
